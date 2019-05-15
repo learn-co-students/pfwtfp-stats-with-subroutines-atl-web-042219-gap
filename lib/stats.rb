@@ -31,6 +31,7 @@ def median(num)
         middle_num = num.length/2
         num[middle_num]
      end
+
 end
 
 #--------------------------------------------------------------------------------------
@@ -41,9 +42,31 @@ def mode(num)
    num.each do |key|
         hash[key] +=1
    end
-   binding.pry
-   hash
-end 
- 
 
+   # find the hash that has the highest value and return its key
+   rtnd_value = 0
+   hash.select do |num_hash_key, num_hash_val|
+      #binding.pry
+      if num_hash_val > rtnd_value
+         rtnd_value = num_hash_val
+      end  
+   end
+   hash.key(rtnd_value)
+
+end 
 #--------------------------------------------------------------------------------------
+
+def standard_deviation(num)
+  binding.pry
+#Calculating the input's mean
+this_mean = mean(num)
+#For each number in the set, subtract the mean from that number and square it. Hang onto that result of squared differences
+this_num = num.map do |digit|
+       (digit-this_mean)**2
+end
+binding.pry
+this_num
+#Calculate the mean on the set of the squared differences
+#Take the square root of that new mean
+     
+end
