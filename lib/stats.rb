@@ -36,37 +36,41 @@ end
 
 #--------------------------------------------------------------------------------------
 def mode(num)
-#iterate throught the array and create a variable that has the element and the # 
-# of times it occurs, return the one where the count is highest
-   hash = Hash.new(0)
-   num.each do |key|
-        hash[key] +=1
-   end
-
-   # find the hash that has the highest value and return its key
-   rtnd_value = 0
-   hash.select do |num_hash_key, num_hash_val|
-      #binding.pry
-      if num_hash_val > rtnd_value
-         rtnd_value = num_hash_val
-      end  
-   end
-   hash.key(rtnd_value)
-
-end 
+   #iterate throught the array and create a variable that has the element and the # 
+   # of times it occurs, return the one where the count is highest
+      hash = Hash.new(0)
+      num.each do |key|
+           hash[key] +=1
+      end
+   
+      # find the hash that has the highest value and return its key
+      rtnd_value = 0
+      hash.select do |num_hash_key, num_hash_val|
+         #binding.pry
+         if num_hash_val > rtnd_value
+            rtnd_value = num_hash_val
+         end  
+      end
+      hash.key(rtnd_value)
+   
+   end 
 #--------------------------------------------------------------------------------------
 
 def standard_deviation(num)
-  binding.pry
-#Calculating the input's mean
-this_mean = mean(num)
-#For each number in the set, subtract the mean from that number and square it. Hang onto that result of squared differences
-this_num = num.map do |digit|
-       (digit-this_mean)**2
+   #Calculating the input's mean
+   mean_input = mean(num)
+   #For each number in the set, subtract the mean from that number and square it. Hang onto that result of squared differences
+      num_squared_dif = num.map do |digit|
+            to_be_squared=(digit- mean_input).floor(2)
+            is_squared = (to_be_squared**2).floor(2) 
+            # binding.pry
+            # 5
+      end
+   #Calculate the mean on the set of the squared differences
+   set_mean = mean(num_squared_dif)
+
+   #Take the square root of that new mean
+   Integer.sqrt(set_mean).to_f  #  = > Almost there
+  
 end
-binding.pry
-this_num
-#Calculate the mean on the set of the squared differences
-#Take the square root of that new mean
-     
-end
+
