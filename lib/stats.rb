@@ -68,9 +68,8 @@ def standard_deviation(num)
       end
    #Calculate the mean on the set of the squared differences
    set_mean = mean(num_squared_dif)
-
    #Take the square root of that new mean
-   Integer.sqrt(set_mean).to_f  #  = > Almost there
+   Math.sqrt(set_mean).floor(2)  #  = > Almost there
   
 end
 
