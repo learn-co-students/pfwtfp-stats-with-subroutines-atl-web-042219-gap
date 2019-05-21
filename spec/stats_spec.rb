@@ -5,21 +5,21 @@ INTERESTING_INTEGER_SET = [63, 60, 1, 51, 90, 69, 97, 29, 24, 62, 7, 43, 33, 79,
 describe 'stats calculator' do
   context 'calculating #mean' do
     it 'returns the mean for an odd set' do
-      expect(mean([1,2,3])).to be_within(0.1).of(2.0) 
+      expect(mean([1,2,3])).to be_within(0.1).of(2.0)
     end
 
     it 'returns the mean for a sub-half t even set' do
-      expect(mean([7,2,4,8])).to be_within(0.001).of(5.25) 
+      expect(mean([7,2,4,8])).to be_within(0.001).of(5.25)
     end
   end
 
   context 'calculating #median' do
     it 'finds the median for an even number of elements' do
-      expect(median([7,2,4,8])).to be_within(0.01).of(5.5) 
+      expect(median([7,2,4,8])).to be_within(0.01).of(5.5)
     end
 
     it 'finds the median for an odd number of elements' do
-      expect(median([55, 96, 95, 13, 37])).to eq(37)
+      expect(median([55, 96, 95, 13, 37])).to eq(55)
     end
   end
 
